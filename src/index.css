@@ -3,3 +3,32 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.title {
+  font-size: 50px;
+  text-align: center;
+}
+
+.lead {
+  text-align: center;
+}
+
+.header {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: grey;
+}
+
+.pictures {
+  width: 50%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 25%;
+  padding-right: 25%;
+
+}
+
+.footer {
+  height: 100px;
+  background-color: #3F53AF;
+}

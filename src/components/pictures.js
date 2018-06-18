@@ -1,50 +1,71 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
-const Pictures = () => (
-    <div className="container">
-        <div className="row">
-            <div className="col-md-3">
-                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100" /></a>
-            </div>
-            <div className="col-md-3">
-                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100" /></a>
-            </div>
-            <div className="col-md-3">
-                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100" /></a>
-            </div>
-            <div className="col-md-3">
-                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100" /></a>
-            </div>
-        </div>
-        <div className="row">
-            <div className="col-md-3">
-                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100" /></a>
-            </div>
-            <div className="col-md-3">
-                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100" /></a>
-            </div>
-            <div className="col-md-3">
-                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100" /></a>
-            </div>
-            <div className="col-md-3">
-                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100" /></a>
-            </div>
-        </div>
-        <div className="row">
-            <div className="col-md-3">
-                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100" /></a>
-            </div>
-            <div className="col-md-3">
-                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100" /></a>
-            </div>
-            <div className="col-md-3">
-                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100" /></a>
-            </div>
-            <div className="col-md-3">
-                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100" /></a>
-            </div>
-        </div>
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+});
+
+function FullWidthGrid(props) {
+  const { classes } = props;
+
+  return (
+    <div className = "pictures">
+    <div className={classes.root}>
+      <Grid container spacing={24}>
+        <Grid item xs={6} sm={3}>
+          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+      </Grid>
     </div>
-)
+    </div>
+  );
+}
 
-export default Pictures;
+FullWidthGrid.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(FullWidthGrid);
