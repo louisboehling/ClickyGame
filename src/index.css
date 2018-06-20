@@ -32,3 +32,9 @@ body {
   height: 100px;
   background-color: #3F53AF;
 }
+
+img {
+  max-width: 250px;
+  max-height: 250px;
+  margin: 40px 0px 40px 0px;
+}

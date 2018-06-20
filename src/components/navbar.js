@@ -30,8 +30,6 @@ function ButtonAppBar(props) {
           <Typography variant="title" color="inherit" className={classes.flex}>
             The Clicky Game
           </Typography>
-          <Button color="inherit">Home</Button>
-          <Button color="inherit">Save</Button>
         </Toolbar>
       </AppBar>
     </div>
