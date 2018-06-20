@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Wrapper from "./components/wrapper";
 import ButtonAppBar from "./components/navbar";
 import CenteredGrid from "./components/pictures";
-import Header from "./components/header";
 import Footer from "./components/footer";
 import images from "./components/images/images.js"
 
@@ -11,14 +10,13 @@ class App extends Component {
     images,
     score: 0,
     highscore: 0,
-    navText: "Click on a picture to start the game."
+    message: "Click on a picture to start the game."
   }
   handleClick = alt => {
     const index = images.findIndex(image => image.alt === alt)
     if (this.state.images[index].clicked) {
-      this.setState({ score: 0, navText: "That is wrong!" })
-      this.reorder
-  ()
+      this.setState({ score: 0, message: "That is wrong!" })
+      this.reorder()
 
       for (let i = 0; i < this.state.images.length; i++) {
         let image = Object.assign(this.state.images)
@@ -28,12 +26,11 @@ class App extends Component {
 
     } else {
       const newScore = this.state.score + 1
-      this.setState({ score: newScore, navText: "Correct!" })
+      this.setState({ score: newScore, message: "Correct!" })
       let image = Object.assign(this.state.images)
       image[index].clicked = true
       this.setState({ image })
-      this.reorder
-  ()
+      this.reorder()
 
       if (newScore > this.state.highscore) {
         this.setState({ highscore: newScore })
@@ -41,15 +38,18 @@ class App extends Component {
       console.log(newScore)
     }
   }
+
   reorder = () => {
     let random = this.state.images.sort((a, b) => { return 0.5 - Math.random() })
     this.setState({ images: random })
   }
+
   render() {
     return (
       <Wrapper>
-        <ButtonAppBar navText={this.state.navText} score={this.state.score} highscore={this.state.highscore} />
-        <Header />
+        <ButtonAppBar message={this.state.message} 
+        score={this.state.score} 
+        highscore={this.state.highscore} />
         <div className="container" >
           <div className="row" id="imageHolder">
             {this.state.images.map(image => (
@@ -66,5 +66,6 @@ class App extends Component {
     )
   }
 }
+
 export default App;
 

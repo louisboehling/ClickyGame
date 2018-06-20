@@ -28,7 +28,9 @@ function ButtonAppBar(props) {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="title" color="inherit" className={classes.flex}>
-            The Clicky Game
+            <h1>The Clicky Game</h1>
+            <p>{ props.message }</p>
+            <p>Your Score: { props.score } | High Score: { props.highscore }</p>
           </Typography>
         </Toolbar>
       </AppBar>
