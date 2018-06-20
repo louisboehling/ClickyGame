@@ -5,11 +5,14 @@
   "dependencies": {
     "@material-ui/core": "^1.2.1",
     "@material-ui/icons": "^1.1.0",
+    "gh-pages": "^1.2.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -26,6 +29,6 @@
   "bugs": {
     "url": "https://github.com/louisboehling/ClickyGame/issues"
   },
-  "homepage": "https://github.com/louisboehling/ClickyGame#readme",
+  "homepage": "https://louisboehling.github.io/ClickyGame",
   "description": ""
 }
